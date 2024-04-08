@@ -163,5 +163,32 @@ print_fibonacci(50)
 
 
 
-letter = input(" Enter the month of the year (Jan - Dec):")
-print(f"you entered {letter}")
+month = input(" Enter the month of the year (Jan - Dec):")
+day = int(input("enter the day of the month"))
+
+if month == 'Dec' or month == 'Jan' or month == 'Feb' or month == 'Mar':
+    season = 'Winter'
+elif month == 'Apr' or month == 'May':
+    season = 'Spring'
+elif month == 'Jun':
+    if day < 21:
+        season = 'Spring'
+    else:
+        season = 'Summer'
+elif month == 'Jul' or month == 'Aug':
+    season = 'Summer'
+elif month == 'Sep':
+    if day < 22:
+        season = 'Summer'
+    else:
+        season = 'Fall'
+elif month == 'Oct' or month == 'Nov':
+    season = 'Fall'
+elif month == 'Dec':
+    if day < 21:
+        season = 'Fall'
+    else:
+        season = 'Winter'
+
+
+print(f"{month} {day} is in {season}")
